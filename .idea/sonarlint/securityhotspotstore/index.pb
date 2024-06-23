@@ -17,3 +17,5 @@ H
 main.py,f\1\f1bdda93d9a278e358509d498e17d97764c1fb29
 I
 model/object_detection.py,8\b\8b3c22a53d6669eeb903eaacd20333e02fed6493
+@
+model/chatbot.py,e\2\e216a2bdc0be768dff2f8cf35a72bbefeb3e2414
