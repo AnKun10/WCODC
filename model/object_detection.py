@@ -3,14 +3,15 @@ import numpy as np
 from PIL import Image
 import streamlit as st
 
+
 class ObjectDetection:
     def __init__(self):
-        self.MODEL = "E:/Workspaces/My Projects/WCODC/experimental/MobileNetSSD_deploy.caffemodel"
-        self.PROTOTXT = "E:/Workspaces/My Projects/WCODC/experimental/MobileNetSSD_deploy.prototxt.txt"
+        self.__MODEL = "E:/Workspaces/My Projects/WCODC/experimental/MobileNetSSD_deploy.caffemodel"
+        self.__PROTOTXT = "E:/Workspaces/My Projects/WCODC/experimental/MobileNetSSD_deploy.prototxt.txt"
 
     def __process_image(self, image):
         blob = cv2.dnn.blobFromImage(cv2.resize(image, (300, 300)), 0.007843, (300, 300), 127.5)
-        net = cv2.dnn.readNetFromCaffe(self.PROTOTXT, self.MODEL)
+        net = cv2.dnn.readNetFromCaffe(self.__PROTOTXT, self.__MODEL)
         net.setInput(blob)
         detections = net.forward()
         return detections
@@ -42,4 +43,3 @@ class ObjectDetection:
             detections = self.__process_image(image)
             proccesed_image = self.annotate_image(image, detections)
             st.image(proccesed_image)
-
