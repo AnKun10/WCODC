@@ -1,6 +1,7 @@
 import sys
 import streamlit as st
 from model.word_correction import WordCorrection
+from model.object_detection import ObjectDetection
 
 
 def main():
@@ -11,7 +12,8 @@ def main():
         model = WordCorrection()
         model.display()
     elif choice == "Object Detection":
-        st.write("Object Detection is not implemented yet.")
+        model = ObjectDetection()
+        model.display()
     elif choice == "Chatbot":
         st.write("Chatbot is not implemented yet.")
 
