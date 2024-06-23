@@ -2,6 +2,7 @@ import sys
 import streamlit as st
 from model.word_correction import WordCorrection
 from model.object_detection import ObjectDetection
+from model.chatbot import Chatbot
 
 
 def main():
@@ -15,7 +16,8 @@ def main():
         model = ObjectDetection()
         model.display()
     elif choice == "Chatbot":
-        st.write("Chatbot is not implemented yet.")
+        model = Chatbot()
+        model.display()
 
 
 if __name__ == "__main__":
